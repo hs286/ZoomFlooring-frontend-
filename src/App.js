@@ -5,13 +5,14 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Contact from "./pages/contact";
 import SignUp from "./pages/register";
 import ServicesDetail from "./pages/services-product-details";
-import Checkout from "./components/billing/checkout";
+import Checkout from "./pages/checkoutpage";
 import Cart from "./pages/cartpage";
 import Service from "./pages/services-poduct";
 import ForgetPassword from "./pages/forget-password"
 import { WhatsAppWidget } from "react-whatsapp-widget";
  import "react-whatsapp-widget/dist/index.css";
 import Login from "./pages/login";
+import AboutUsPage from "./pages/about-us";
 
 
 
@@ -104,10 +105,11 @@ const  App=()=> {
           <Route path="/services/:category/:id" element={<ServicesDetail />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/checkout" element={<Checkout />} />
-          <Route path = '/register' element = {<SignUp/>}/>
+          <Route path ='/register' element = {<SignUp/>}/>
           <Route path="/cart" element={<Cart />} />
           <Route path="/login" element={<Login />} />
           <Route path="/forgetpassword" element={<ForgetPassword/>}/>
+          <Route path="/about-us" element={<AboutUsPage/>}/>
         </Routes>
       </Router>
       

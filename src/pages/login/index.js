@@ -14,12 +14,11 @@ function Login() {
   const navigate=useNavigate()
   const dispatch = useDispatch()
   const cartProducts = useSelector((state) => state?.service?.cartProducts);
-  console.log(cartProducts?.length,"in cart")
+  console.log(cartProducts,"in cart")
 
 
   useEffect(()=>{
-    dispatch(getCartServices());
-    if(cartProducts!==null&&cartProducts?.length!==0 && Object.keys(token).length!==0){
+    if(cartProducts!==null&&cartProducts?.length!==0 && Object.keys(token)?.length!==0){
       navigate('/checkout')
     }
   },[cartProducts])

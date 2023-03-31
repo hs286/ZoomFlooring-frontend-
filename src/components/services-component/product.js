@@ -27,7 +27,8 @@ const Product = ({ service }) => {
         <div className="row mt-5">
           <div className="col-lg-5 col-12 pb-5">
             <div>
-              <div className="card h-100">
+              <div className="card h-100" data-aos="fade-right"
+                            data-aos-duration="2000">
                 <Image
                   style={{ width: "100%", height: "500px" }}
                   src={`${process.env.REACT_APP_API}/images/${image}` || {}}
@@ -36,7 +37,8 @@ const Product = ({ service }) => {
             </div>
           </div>
 
-          <div className="col-lg-7 col-12 ">
+          <div className="col-lg-7 col-12 " data-aos="fade-left"
+                            data-aos-duration="2000">
             <h3 className="font-weight-semi-bold">{name}</h3>
 
             <h4 className=" text-primary mb-4">
@@ -64,7 +66,7 @@ const Product = ({ service }) => {
                   </label>
                   <input
                     id="Age"
-                    className="form-control"
+                    className="form-control fs-4"
                     type="number"
                     name="age"
                     placeholder={area.$numberDecimal}
@@ -74,8 +76,8 @@ const Product = ({ service }) => {
                     onChange={(e) => setQuantity(e.target.value)}
                   />
                 </div>
-                <button type="submit" className="btn btn-primary  p-1">
-                  <i className="fa fa-shopping-cart mr-1"></i> Add To Cart
+                <button type="submit" className="btn btn-primary rounded  p-1 fs-4">
+                  <i className="fa fa-shopping-cart text-muted  mr-1"></i> Add To Cart
                 </button>
               </div>
               <div className="d-flex align-items-center justify-content-between">

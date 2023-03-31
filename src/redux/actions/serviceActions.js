@@ -24,7 +24,7 @@ export const gettingServiceById = (service) => ({
 export const getServiceById = (id) => async (dispatch) => { 
   try {
     const service = await axios.get(`${process.env.REACT_APP_API}/service/${id}`);
-    // toast.success("New user registered successfully")
+     toast.success("New user registered successfully")
     dispatch(gettingServiceById(service));
   } catch (error) {
     toast.error(error.response.data.message);
@@ -39,7 +39,6 @@ export const gettingHomeData = (home) => ({
 export const getHomeData = (id) => async (dispatch) => {
   try {
     const home = await axios.get(`${process.env.REACT_APP_API}/service/home`);
-    console.log(home,"hi");
     dispatch(gettingHomeData(home?.data));
   } catch (error) {
     toast.error(error?.response?.data?.message);
@@ -47,7 +46,15 @@ export const getHomeData = (id) => async (dispatch) => {
   }
 };
 
-
+export const sendMail = (formData) => async () => { 
+  try {
+    await axios.post(`${process.env.REACT_APP_API}/mail`,  {formData} );
+    toast.success("Your request has been sent successfully")
+  } catch (error) {
+    toast.error(error.response.data.message);
+    console.log(error.response.data.message);
+  }
+};
 
 
 // export const addDonation = (donationData) => async (dispatch) => {

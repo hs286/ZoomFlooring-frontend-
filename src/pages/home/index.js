@@ -15,6 +15,7 @@ import {
 } from "mdbreact";
 import Footer from "../../components/footer";
 import { TabTitle } from "../../helpers/TabTitle";
+import Loader from "../../helpers/Loader";
 
 function Home() {
   // const obj = [
@@ -78,7 +79,8 @@ function Home() {
   return (
     <>
     <Navbar/>
-    {homedata.length!==0&&<HomeComoponet homeData={homedata}/>}
+    {homedata.length===0&&<Loader/>}
+    {homedata&&<HomeComoponet homeData={homedata}/>}
     <Footer/>
      </>
   );

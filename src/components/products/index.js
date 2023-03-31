@@ -1,66 +1,75 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { Link } from "react-router-dom";
 
 //import productDescription from '../productDescription'
 
-function index({products}) {
-    // console.log(products[0].price.$numberDecimal,"hi")
-    // const handleClick=(e,users)=>{
-    //   e.preventDefault();
-    //   <productDescription productDetails={users}/>
-    // }
+function index({ products }) {
+  // console.log(products[0].price.$numberDecimal,"hi")
+  // const handleClick=(e,users)=>{
+  //   e.preventDefault();
+  //   <productDescription productDetails={users}/>
+  // }
   return (
     <>
-     <div className = "container">
-        {products !==  undefined && (
+      <div className="container">
+        <div className="heading">
+          <h1 className="text-center "><b>{products[0]?.category}</b></h1>
+          <svg
+            id="project-stroke"
+            xmlns="http://www.w3.org/2000/svg"
+            width="400.283"
+            height="152.146"
+            viewBox="0 0 655.283 252.146"
+          >
+            <path
+              id="Path_1457"
+              data-name="Path 1457"
+              d="M18902.814,9541.726s-153.9-86.985-8.129-179.28,414.215-54.011,500.8-21.781,126.879,110.482-27.693,180.707-544.713-28.525-544.713-28.525"
+              transform="translate(-18821.85 -9299.652)"
+              fill="none"
+              stroke="#d19c97"
+              strokeLinecap="round"
+              strokeWidth="12"
+            ></path>
+          </svg>
+        </div>
+        {products !== undefined && (
           <>
             <div>
-              <div className = "row ">
-                {products.map((campaigns)  => (
-                  <React.Fragment key = {campaigns._id} >
-                    <div className = "col-md-4 col-12 mt-2 mb-2" data-aos = "fade-up">
-                    <Link to={`/services/${campaigns.category}/${campaigns._id}`}>
-
-                      <div className = "card services  h-100">
-                      <img
-                    className = "card-img-top"
-                    style = {{ height:"300px", objectFit: "fill" }}
-                    src = {
-                      `${process.env.REACT_APP_API}/images/${campaigns.image}`
-                    }
-                    alt = "Cardimagecap"
-                  />
-                        <div className = "card-body">
-                          {/* <div className = "d-flex justify-content-between">
-                            <p className = "card-text fw-light text-muted">
-                              Funding
+              <div className="row ">
+                {products.map((campaigns) => (
+                  <React.Fragment key={campaigns._id}>
+                    <div
+                      className="col-md-4 col-12 mt-2 mb-4 "
+                      data-aos="fade-up"
+                    >
+                      <Link
+                        to={`/services/${campaigns.category}/${campaigns._id}`}
+                      >
+                        <div className="card services h-100 border-primary">
+                          <div className="img-header">
+                          <img
+                            data-aos="zoom-in"
+                            data-aos-duration="1000"
+                            className="card-img-top"
+                            src={`${process.env.REACT_APP_API}/images/${campaigns.image}`}
+                            alt="Cardimagecap"
+                          />
+                          
+                          </div>
+                          <div className="card-body">
+                            <h3 className="card-title text-primary mt-3">
+                              {campaigns.name}
+                            </h3>
+                            <p className="card-text"></p>
+                            <p className="fw-bold">
+                              <span className="fw-light "> Price: </span>$
+                              {campaigns.price.$numberDecimal} for{" "}
+                              {campaigns.unit}
                             </p>
-                            <p
-                              className = "badge text-white bg-success"
-                              style = {{ textTransform: "capitalize" }}
-                            >
-                              {campaigns.status}
-                            </p>
-                          </div> */}
-                          <h5 className = "card-title text-info">
-                            {campaigns.name}
-                          </h5>
-                          <p className = "card-text"></p>
-                          <p className = "fw-bold">
-                          <span className = "fw-light "> Price: </span>
-
-                            ${campaigns.price.$numberDecimal} for {campaigns.unit}
-                          </p>
-                          {/* <button
-                            className = "raiseFund text-white btn bg-info"
-                            onClick = {() => handleCampaignClick(campaigns.id)}
-                          >
-                            Raise fund
-                          </button> */}
+                          </div>
                         </div>
-                      </div>
                       </Link>
-
                     </div>
                   </React.Fragment>
                 ))}
@@ -68,11 +77,9 @@ function index({products}) {
             </div>
           </>
         )}
-        
       </div>
-      
     </>
-  )
+  );
 }
 
-export default index
+export default index;

@@ -49,9 +49,38 @@ export const deleteCartService = (id) => async (dispatch) => {
   const cartServices = JSON.parse(localStorage.getItem("cart"));
   console.log(cartServices);
 
- const updatedCart= cartServices.filter((el) =>  el.service._id!==id);
- console.log(updatedCart)
- localStorage.setItem("cart", JSON.stringify(updatedCart));
- dispatch(gettingCartServices(updatedCart));
+  const updatedCart = cartServices.filter((el) => el.service._id !== id);
+  console.log(updatedCart);
+  localStorage.setItem("cart", JSON.stringify(updatedCart));
+  dispatch(gettingCartServices(updatedCart));
+};
+export const addOrderDetails = (addressDetails, _id) => async (dispatch) => {
+  var cartServices = JSON.parse(localStorage.getItem("cart"));
+  cartServices = cartServices.map(({ quantity, service }) => {
+    return {
+      quantity: quantity,
+      product: service.name,
+      price: service.price.$numberDecimal,
+      unit: service.unit,
+    };
+  });
+  try {
+    const res = await axios.post(
+      `${process.env.REACT_APP_API}/orderDetails`,
+      { addressDetails, _id, cartServices },
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    console.log(res, "hi");
 
+    // if(res.status==200){
+    //   localStorage.removeItem("cart")
+    // }
+  } catch (error) {
+    console.log(error.message);
+    // return response.status(500).json(error.message);
+  }
 };

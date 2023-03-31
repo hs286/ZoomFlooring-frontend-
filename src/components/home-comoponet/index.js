@@ -16,11 +16,11 @@ const HomeComoponet = ({ homeData }) => {
 
             return (
               <div className="row " key={slide._id}>
-                <h2 className="text-center p-3 bg-dark text-light mb-5 mt-5">
+                <h1 className="text-center  bg-secondary text-dark ">
                   {slide.category}
-                </h2>
-                <div className="col-lg-6 col-12">
-                  <Carousel className="d-block ">
+                </h1>
+                <div className="col-lg-6 col-12" data-aos="flip-right">
+                  <Carousel>
                     {slide.image.map((e) => (
                       <Carousel.Item style={{ height: "32rem" }} key={e}>
                         <Image
@@ -35,7 +35,7 @@ const HomeComoponet = ({ homeData }) => {
                     ))}
                   </Carousel>
                 </div>
-                <div className=" col-lg-6 col-12">
+                <div className=" col-lg-6 col-12" data-aos = "fade-up">
                   <>
                     {des.map((e, index) => {
                       if (e.length < 20) {
