@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { Navbar, Nav } from "react-bootstrap";
-import img from "../../assets/zoomlogo.png";
+import img from "../../images/zoomlogo.png";
 import { JwtId } from "../../helpers/JwtId";
 
 const Navbarr = () => {

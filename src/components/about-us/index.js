@@ -1,8 +1,8 @@
 import React from "react";
-import values from "../../assets/values.png";
-import vision from "../../assets/vision.jpg";
-import purpose from "../../assets/purpose.jpg";
-import caring from "../../assets/caring.png";
+import values from "../../images/values.png";
+import vision from "../../images/vision.jpg";
+import purpose from "../../images/purpose.jpg";
+import caring from "../../images/caring.png";
 
 function AboutUsComponent() {
   return (

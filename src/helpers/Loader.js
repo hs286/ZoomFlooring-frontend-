@@ -1,4 +1,4 @@
-import img from '../assets/zoomlogo.png'
+import img from '../images/zoomlogo.png'
 function Loader() {
   return (
     <div className = "spin">
