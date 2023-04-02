@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
-import Service from "../../components/services-component";
-import Navbar from "../../components/navbar";
+import Service from "../components/services-component";
+import Navbar from "../components/navbar";
 import { useSelector, useDispatch } from "react-redux";
-import { getServiceById } from "../../redux/actions/serviceActions";
+import { getServiceById } from "../redux/actions/serviceActions";
 import { useParams } from "react-router-dom";
-import Footer from "../../components/footer";
+import Footer from "../components/footer";
 
 function ServicesProductDetails() {
   const dispatch = useDispatch();
@@ -17,7 +17,7 @@ function ServicesProductDetails() {
     } else {
       dispatch(getServiceById(id));
     }
-  }, [dispatch, id]);
+  }, [dispatch, id,service]);
 
   return (
     <>

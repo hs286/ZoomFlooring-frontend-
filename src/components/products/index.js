@@ -4,17 +4,16 @@ import { Link } from "react-router-dom";
 function index({ products }) {
   return (
     <>
-      <div className="container">
-        <div className="heading">
-          <h1 className="text-center ">
-            <b>{products[0]?.category}</b>
-          </h1>
+    <div className="heading">
+          <h2 className="text-center fs-1">
+           <b> {products[0]?.category}</b>
+          </h2>
           <svg
             id="project-stroke"
             xmlns="http://www.w3.org/2000/svg"
-            width="490.283"
+            width="990.283"
             height="152.146"
-            viewBox="0 0 655.283 252.146"
+            viewBox="0 0 655.283 262.146"
           >
             <path
               id="Path_1457"
@@ -28,6 +27,8 @@ function index({ products }) {
             ></path>
           </svg>
         </div>
+      <div className="container">
+        
         {products !== undefined && (
           <>
             <div>

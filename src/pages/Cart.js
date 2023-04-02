@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
-import Cart from "../../components/billing/cart";
-import Footer from "../../components/footer";
-import Navbar from "../../components/navbar";
+import Cart from "../components/billing/cart";
+import Footer from "../components/footer";
+import Navbar from "../components/navbar";
 import { useDispatch, useSelector } from "react-redux";
-import { getCartServices } from "../../redux/actions/cartActions";
-import { TabTitle } from "../../helpers/TabTitle";
+import { getCartServices } from "../redux/actions/cartActions";
+import { TabTitle } from "../helpers/TabTitle";
 
 const Index = () => {
   TabTitle("CART - Zoom Flooring");

@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
-import HomeComoponet from "../../components/home-comoponet";
-import Navbar from "../../components/navbar";
+import HomeComoponet from "../components/home-comoponet";
+import Navbar from "../components/navbar";
 import { useSelector, useDispatch } from "react-redux";
-import { getHomeData } from "../../redux/actions/serviceActions";
-import Footer from "../../components/footer";
-import { TabTitle } from "../../helpers/TabTitle";
-import Loader from "../../helpers/Loader";
+import { getHomeData } from "../redux/actions/serviceActions";
+import Footer from "../components/footer";
+import { TabTitle } from "../helpers/TabTitle";
+import Loader from "../helpers/Loader";
 
 function Home() {
   TabTitle("Zoom Flooring");

@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
-import Footer from "../../components/footer";
-import LoginComponent from "../../components/login";
-import Navbarr from "../../components/navbar";
-import { TabTitle } from "../../helpers/TabTitle";
+import Footer from "../components/footer";
+import LoginComponent from "../components/login";
+import Navbarr from "../components/navbar";
+import { TabTitle } from "../helpers/TabTitle";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { JwtId } from "../../helpers/JwtId";
+import { JwtId } from "../helpers/JwtId";
 
 function Login() {
   TabTitle("LOGIN - Zoom Flooring");

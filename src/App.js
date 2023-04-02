@@ -1,31 +1,24 @@
 import "./App.css";
-import Home from "./pages/home";
-import ScrollUpButton from "react-scroll-up-button";
+import Home from "./pages/Home.js";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Contact from "./pages/contact";
-import SignUp from "./pages/register";
-import ServicesDetail from "./pages/services-product-details";
-import Checkout from "./pages/checkoutpage";
-import Cart from "./pages/cartpage";
-import Service from "./pages/services-poduct";
-import ForgetPassword from "./pages/forget-password"
+import Contact from "./pages/Contact.js";
+import SignUp from "./pages/Register.js";
+import ServicesDetail from "./pages/ServiceProductDetails.js";
+import Checkout from "./pages/CheckOut.js";
+import Cart from "./pages/Cart.js";
+import Service from "./pages/ServiceProduct.js";
+import ForgetPassword from "./pages/ForgotPassword"
 import { WhatsAppWidget } from "react-whatsapp-widget";
- import "react-whatsapp-widget/dist/index.css";
-import Login from "./pages/login";
-import AboutUsPage from "./pages/about-us";
-
-
-
+import "react-whatsapp-widget/dist/index.css";
+import Login from "./pages/Login.js";
+import AboutUsPage from "./pages/AboutUs.js";
 
 const  App=()=> {
- 
-  const CompanyIcon = () => (
-  
-    
 
+const CompanyIcon = () => (
 <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
- width="601.000000pt" height="352.000000pt" viewBox="0 0 601.000000 352.000000"
- preserveAspectRatio="xMidYMid meet">
+width="601.000000pt" height="352.000000pt" viewBox="0 0 601.000000 352.000000"
+preserveAspectRatio="xMidYMid meet">
 <metadata>
 Created by potrace 1.16, written by Peter Selinger 2001-2019
 </metadata>
@@ -94,7 +87,6 @@ fill="#000000" stroke="none">
         </Routes>
       </Router>
       
-      <ScrollUpButton />
     </>
   );
 }

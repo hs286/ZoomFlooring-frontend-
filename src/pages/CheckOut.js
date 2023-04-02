@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
-import Checkout from "../../components/billing/checkout";
-import Footer from "../../components/footer";
-import { TabTitle } from "../../helpers/TabTitle";
+import Checkout from "../components/billing/checkout";
+import Footer from "../components/footer";
+import { TabTitle } from "../helpers/TabTitle";
 import { useDispatch, useSelector } from "react-redux";
-import { getCartServices } from "../../redux/actions/cartActions";
-import { JwtId } from "../../helpers/JwtId";
+import { getCartServices } from "../redux/actions/cartActions";
+import { JwtId } from "../helpers/JwtId";
 
 const Index = () => {
   TabTitle("CHECK-OUT - Zoom Flooring");
