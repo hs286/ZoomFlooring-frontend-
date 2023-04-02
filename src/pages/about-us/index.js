@@ -1,17 +1,16 @@
-import React from 'react'
-import AboutUsComponent from '../../components/about-us'
-import Footer from '../../components/footer'
-import Navbar from '../../components/navbar'
+import React from "react";
+import AboutUsComponent from "../../components/about-us";
+import Footer from "../../components/footer";
+import Navbar from "../../components/navbar";
 
 function AboutUsPage() {
   return (
     <>
-    <Navbar/>
-    <AboutUsComponent/>
-    <Footer/>
-      
+      <Navbar />
+      <AboutUsComponent />
+      <Footer />
     </>
-  )
+  );
 }
 
-export default AboutUsPage
+export default AboutUsPage;

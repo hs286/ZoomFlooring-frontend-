@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="row px-xl-5 pt-5">
           <div className="col-12 mb-5 pr-3 ">
             <p className="text-light text-center">
-               Copyright © 2023 | Zoom Flooring | All Rights Reserved.
+              Copyright © 2023 | Zoom Flooring | All Rights Reserved.
             </p>
           </div>
         </div>

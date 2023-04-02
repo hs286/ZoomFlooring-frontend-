@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { sendMail } from "../../redux/actions/serviceActions";
 
-
 export const Contact = () => {
   const dispatch = useDispatch();
   const options = [
@@ -22,12 +21,10 @@ export const Contact = () => {
   var { name, email, subject, message } = formData;
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
     if (!formData.subject) {
       setError("Please select an option");
     } else {
-        console.log(formData)
-        dispatch(sendMail(formData))
+      dispatch(sendMail(formData));
     }
   };
   const handleChange = (e) => {
@@ -86,7 +83,7 @@ export const Contact = () => {
                     {options.map((option, index) => {
                       if (index === 0) {
                         return (
-                          <option key={index} value={''} disabled>
+                          <option key={index} value={""} disabled>
                             {option}
                           </option>
                         );
@@ -128,16 +125,13 @@ export const Contact = () => {
           </div>
           <div className="col-lg-5 mb-5">
             <h5 className="font-weight-semi-bold mb-3">Get In Touch</h5>
-
             <div className="d-flex flex-column">
               <h5 className="font-weight-semi-bold text-info mb-3">Address</h5>
               <p className="mb-2">
                 <i className="fa fa-map-marker-alt text-danger mr-3"></i>8911 N
                 Capital of Texas Hwy St. 4200 Austin, TX 78759
               </p>
-              {/* <p className="mb-2"><i className="fa fa-envelope text-primary mr-3"></i>info@example.com</p> */}
               <h5 className="font-weight-semi-bold text-info mb-3">Phone</h5>
-
               <p className="mb-0">
                 <i className="fa fa-phone-alt text-success mr-3"></i>7378951918
               </p>

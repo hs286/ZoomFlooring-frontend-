@@ -1,8 +1,6 @@
 
 import axios from "axios";
-// import dotenv from 'dotenv'
 import toast from "react-hot-toast";
-//import { json } from "react-router-dom";
 import * as types from "../actionType";
 
 export const userRegistered = (users,error) => ({
@@ -12,7 +10,6 @@ export const userRegistered = (users,error) => ({
 });
 
 export const registerUser = (userCredentials) => async (dispatch) => { 
-  console.log(userCredentials)
   try {
     const res = await axios.post(`${process.env.REACT_APP_API}/user`,  userCredentials );
     toast.success("New user registered successfully")

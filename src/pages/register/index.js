@@ -5,7 +5,7 @@ import RegisterComponent from "../../components/register";
 import { TabTitle } from "../../helpers/TabTitle";
 
 const Register = () => {
-  TabTitle('REGISTER - Zoom Flooring')
+  TabTitle("REGISTER - Zoom Flooring");
   return (
     <>
       <Navbar />

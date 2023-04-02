@@ -9,7 +9,6 @@ export const gettingServices = (service) => ({
 export const getServices = (id) => async (dispatch) => {
   try {
     const services = await axios.get(`${process.env.REACT_APP_API}/service/?category=${id}`);
-    console.log(services,"hi");
     dispatch(gettingServices(services.data));
   } catch (error) {
     toast.error(error.response.data.message);
@@ -57,21 +56,4 @@ export const sendMail = (formData) => async () => {
 };
 
 
-// export const addDonation = (donationData) => async (dispatch) => {
-//   try {
-//     await axios.post(
-//       `${process.env.REACT_APP_API}/service/donation/create`,
-//       donationData,
-//       {
-//         headers: {
-//           "Content-Type": "application/json",
-//         },
-//       }
-//     );
-//     toast.success("Thank you for donating");
-//     dispatch(getService());
-//   } catch (error) {
-//     toast.error(error.response.data.message);
-//     console.log(error.response.data.message);
-//   }
-// };
+

@@ -34,12 +34,11 @@ function Index() {
   });
 
   useEffect(() => {
-    console.log("hi");
     if (status === false) {
       navigate("/");
       dispatch(userRegistered(null, true));
     }
-  }, [status]);
+  }, [status,dispatch,navigate]);
   return (
     <div className="container">
       <div className="row">

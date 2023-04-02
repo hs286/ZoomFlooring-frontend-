@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch} from "react-redux";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import Button from "react-bootstrap/esm/Button";
@@ -12,7 +12,6 @@ function LoginComponent() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const token = JwtId();
-  const status = useSelector((state) => state?.service?.token?.data);
 
   const validate = Yup.object().shape({
     email: Yup.string().email("Email is invalid").required("Email is required"),
@@ -25,7 +24,7 @@ function LoginComponent() {
     if (Object.keys(token).length !== 0) {
       navigate("/");
     }
-  }, [status]);
+  }, [token,navigate]);
 
   return (
     <div className="container">
@@ -47,12 +46,21 @@ function LoginComponent() {
                 <TextField label="Email" name="email" type="email" />
                 <TextField label="password" name="password" type="password" />
                 <div className="d-flex justify-content-between">
-                  <Button  variant="primary"  type="submit"  disabled={!formikProps.isValid} >
+                  <Button
+                    variant="primary"
+                    type="submit"
+                    disabled={!formikProps.isValid}
+                  >
                     Login
                   </Button>
                   <Link to={"/register"}>Register</Link>
-                </div><div className="text-end ">                <Link to={'/forgetpassword'} className="text-danger">Forget Password</Link></div>
-
+                </div>
+                <div className="text-end ">
+                  {" "}
+                  <Link to={"/forgetpassword"} className="text-danger">
+                    Forget Password
+                  </Link>
+                </div>
               </Form>
             )}
           </Formik>

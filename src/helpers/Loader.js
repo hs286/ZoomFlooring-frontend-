@@ -6,7 +6,7 @@ function Loader() {
         style={{ width: "4rem", height: "4rem" }}
         role="status"
       ><img         className="loading"
-      src={img}></img></div>
+      src={img} alt='loader'></img></div>
     </div>
   );
 }
